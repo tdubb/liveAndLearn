@@ -1,0 +1,17 @@
+// Place all the styles related to the Home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.banner {
+  background-color: rgba(0, 168, 232, 1); /*light blue*/
+  border-radius: 5px;
+  border: solid 1px;
+  border-color: white;
+}
+
+.indexBody {
+  background-color: rgba(255, 255, 255, 1); /*white*/
+  height: 800px;
+  border-radius: 5px;
+  margin: 10px;
+}

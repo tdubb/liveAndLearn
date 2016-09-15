@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LiveAndLearn</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+    <div class="containter defaultBackground">
+    <div class="row">
+      <div class="col-sm-1">
+      </div>
+      <div class="col-sm-10">
+        <ul class="nav nav-pills navbar navbar-fixed-top">
+        <h2 class="liveAndLearn">Live and Learn</h2>
+          <li role="presentation"><a href="#">Home</a></li>
+          <li role="presentation"><a href="#">Profile</a></li>
+          <li role="presentation"><a href="#">Messages</a></li>
+          <% if user_signed_in? %>
+            <li class="pull-right">
+            <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+            </li>
+            <% else %>
+            <li class="pull-right">
+            <%= link_to('Login', new_user_session_path)  %>
+            </li>
+          <% end %>
+
+        </ul>
+      </div>
+      <div class="col-sm-1">
+      </div>
+      <%= yield %>
+    </div>
+  </body>
+</html>
