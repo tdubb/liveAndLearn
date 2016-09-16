@@ -19,6 +19,43 @@
 
  html,body { height: 120%; margin: 0px; margin-top: -60px; padding: 0px; }
 
+ .outerContainer {
+   margin-top: 80px;
+   width: 80%;
+   margin: auto;
+ }
+
+
+
+ .dropdown-toggle {
+   background-color: rgba(0, 23, 31, 1); /*black*/
+   color: #337ab7;
+   border: none;
+   margin-top: 8px;
+ }
+
+ .stylish-input-group .input-group-addon{
+    background: white !important;
+    height: 35px;
+}
+.stylish-input-group .form-control{
+	border-right:0;
+	box-shadow:0 0 0;
+	border-color:#ccc;
+}
+.stylish-input-group button{
+    border:0;
+    background:transparent;
+}
+
+.stylish-input-group {
+  width: 180px;
+}
+
+.form-control {
+  height: 35px;
+}
+
  // h1, h2 {
  //   color: white;
  //   text-shadow: 0 0 10px #fff,
@@ -31,7 +68,7 @@
  //   0 0 150px #ff00de;
  // }
 
- .navbar h2 {
+ .liveAndLearn {
    color: black;
  text-shadow: 0 0 10px #fff,
  0 0 20px #fff,
@@ -65,4 +102,28 @@
    vertical-align: bottom;
    margin-top: 5px;
    margin-bottom: -30px;
+ }
+
+ @media screen and (max-width: 950px) {
+   .navbar .liveAndLearn {
+     display: none;
+   }
+ }
+ @media screen and (min-width: 950px) {
+   .smallLiveAndLearn {
+     display: none;
+   }
+ }
+ @media screen and (max-width: 950px) {
+   .smallLiveAndLearn {
+     margin-top: 100px;
+     margin-bottom: -100px;
+   }
+ }
+
+ @media screen and (max-width: 614px) {
+   .smallLiveAndLearn {
+     margin-top: 120px;
+     margin-bottom: -100px;
+   }
  }

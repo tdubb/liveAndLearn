@@ -22,9 +22,10 @@ gem 'better_errors'
 gem 'binding_of_caller'
 gem 'rest-client'
 gem 'pry'
-gem 'omniauth-oauth2', '1.3.1'
+gem "omniauth-google-oauth2"
 gem 'react-rails'
 gem 'bootstrap-sass', '~> 3.3.6'
+gem 'figaro'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
