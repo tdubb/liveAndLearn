@@ -26,6 +26,8 @@ gem "omniauth-google-oauth2"
 gem 'react-rails'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'figaro'
+gem 'pg_search'
+gem 'gridster-rails'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

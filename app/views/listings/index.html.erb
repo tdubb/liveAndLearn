@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 text-center">
+      <div class="gridster">
+        <ul>
+            <%- @listings.each_with_index do |listing, index| %>
+            <li data-row="<%=index < 2 ? 1 : 4%>" data-col="<%=index%2 == 0 ? 1 : 4%>" data-sizex="3" data-sizey="3">
+            <h2><%= link_to listing.title, user_listing_path(current_user, listing) %></h2>
+            <br>
+            <h3><%= listing.email %>
+            </li>
+            <% end -%>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type='text/javascript'>
+  var gridster;
+
+  $(function(){
+
+  gridster = $(".gridster ul").gridster({
+    widget_base_dimensions: [100, 55],
+    widget_margins: [5, 5],
+    avoid_overlapped_widgets: true,
+    helper: 'clone',
+    max_cols: 2,
+    max_rows: 2,
+  }).data('gridster');
+
+
+  });
+</script>
