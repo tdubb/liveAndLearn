@@ -10,6 +10,7 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require jquery-ui
  *= require jquery.gridster.css
  *= require users
  *= require home
@@ -27,6 +28,12 @@
    margin: auto;
  }
 
+.block {
+  border: solid 1px;
+  background-color: red;
+  margin: 0px 0px 20px 65px;
+  height: 300px;
+}
 
 
  .dropdown-toggle {

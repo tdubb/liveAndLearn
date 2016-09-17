@@ -4,8 +4,13 @@
 
 .gridster ul {
     list-style: none;
-    background-color: gray;
 }
 .gridster ul li {
     background-color: red;
+}
+
+#drop {
+    border: solid 2px red;
+    height: 200px;
+    width: 1000px;
 }

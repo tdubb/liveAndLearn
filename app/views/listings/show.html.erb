@@ -1,9 +1,14 @@
 <div class="container">
   <div class="row">
-    <div class="col-lg-12 text-center">
-        <h2><%= @listing.title %></h2>
-        <br>
-        <h3><%= @listing.email %>
-    </div>
+
+          <%- @listings.each_with_index do |listing, index| %>
+          <div class="col-sm-5 text-center block">
+            <div>
+            <h2><%= link_to listing.title, current_user ? user_listing_path(current_user, listing) : listing_path(listing)%></h2>
+            <br>
+            <h3><%= listing.email %>
+            </div>
+          </div>
+          <% end -%>
   </div>
 </div>
