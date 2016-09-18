@@ -25,6 +25,7 @@ gem 'pry'
 gem "omniauth-google-oauth2"
 gem 'react-rails'
 gem 'bootstrap-sass', '~> 3.3.6'
+gem 'bootstrap_form'
 gem 'figaro'
 gem 'pg_search'
 gem 'gridster-rails'

@@ -1,0 +1,17 @@
+<div class="containter">
+  <div class="row">
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-4">
+      <%= bootstrap_form_for @listing do |f| %>
+        <%= f.text_field :title %>
+        <%= f.text_area :body %>
+        <%= f.text_field :email %>
+        <%= f.text_field :phone %>
+        <%= f.submit %>
+      <% end %>
+    </div>
+    <div class="col-md-4">
+    </div>
+  </div>
+</div>
