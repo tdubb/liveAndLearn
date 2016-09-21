@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: liveAndLearn_dev
+  database: liveAndLearn
   username: <%= ENV['LIVEANDLEARN_DATABASE_USERNAME'] %>
   password: <%= ENV['LIVEANDLEARN_DATABASE_PASSWORD'] %>
 
@@ -83,6 +83,6 @@ test:
 #
 production:
   <<: *default
-  database: liveAndLearn_production
+  database: liveAndLearn_dev
   username: <%= ENV['LIVEANDLEARN_DATABASE_USERNAME'] %>
   password: <%= ENV['LIVEANDLEARN_DATABASE_PASSWORD'] %>
