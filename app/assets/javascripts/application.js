@@ -11,7 +11,12 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery-ui
 //= require jquery_ujs
+//= require jquery.gridster.js
 //= require bootstrap-sprockets
 //= require turbolinks
+//= require listings.js
+//= require photos.js
+//= require users.js
 //= require_tree .

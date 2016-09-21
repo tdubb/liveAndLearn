@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+  <div class="row listingShow">
+
+          <div class="col-lg-12 col-md-12 col-sm-12 text-center block">
+            <div class="panel panel-primary">
+            <h1 class="panel-heading"><%=  @listing.title%></h1>
+            <h2 class="panel-body"><%= @listing.description %></h2>
+            <h4 class="panel-body"><%= @listing.body %></h4>
+            <h3 class="panel-body"><%= @listing.email %></h3>
+            <h3 class="panel-body"><%= @listing.phone %></h3>
+            <% @photos.each do |photo| %>
+              <h3 class="panel-body inline"><%= image_tag photo.image_url(:thumb) if photo.image? %></h3>
+            <% end %>
+            <h3 class="panel-body"><%= link_to "Add Images", new_listing_photo_path(@listing, @photo) %></h3>
+            </div>
+          </div>
+  </div>
+</div>

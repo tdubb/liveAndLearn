@@ -22,12 +22,21 @@ gem 'better_errors'
 gem 'binding_of_caller'
 gem 'rest-client'
 gem 'pry'
-gem 'omniauth-oauth2', '1.3.1'
+gem "omniauth-google-oauth2"
 gem 'react-rails'
 gem 'bootstrap-sass', '~> 3.3.6'
+gem 'bootstrap_form'
+gem 'figaro'
+gem 'pg_search'
+gem 'gridster-rails'
+gem 'carrierwave'
+gem 'fog', '~> 1.16'
+gem "rmagick"
+gem 'aws-sdk', '~> 2'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder

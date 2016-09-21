@@ -10,14 +10,105 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require jquery-ui
+ *= require jquery.gridster.css
+ *= require rails_bootstrap_forms
  *= require users
  *= require home
+ *= require listings
  *=
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
- html,body { height: 120%; margin: 0px; margin-top: -60px; padding: 0px; }
+ html,body { min-height: 120%; margin: 0px; margin-top: -60px; padding: 0px; background: rgba(0, 126, 167, 1);}
+
+
+ .clearNavBar {
+   margin-top: 60px;
+ }
+ .alert {
+   text-align: center;
+ }
+ .outerContainer {
+   margin-top: 80px;
+   width: 80%;
+   margin: auto;
+ }
+ .listingShow {
+   margin-left: -150px;
+ }
+//
+.block a {
+  // border: solid 1px;
+  // background-color: red;
+  // margin: 0px 0px 20px 65px;
+  color: white;
+}
+
+.block {
+  margin-left:70px;
+  min-height: 00px;
+}
+
+.delete-listing {
+  position:absolute;
+  bottom:0;
+  margin-bottom:7px;
+  left: 0;
+}
+
+
+.panel-primary > .panel-heading {
+    white-space:nowrap;
+    background-color: #e00a0a;
+    min-height: 50px;
+}
+
+@media(max-width:992px){
+
+  .block {
+    margin-left: -8px;
+    min-height: 300px;
+    // width: 500px;
+}
+}
+@media(max-width:767px){
+  .block {
+      margin-left:0px;
+      min-height: 300px;
+      // width: 300px;
+  }
+}
+
+ .dropdown-toggle {
+   background-color: rgba(0, 23, 31, 1); /*black*/
+   color: #337ab7;
+   border: none;
+   margin-top: 8px;
+ }
+
+ .stylish-input-group .input-group-addon{
+    background: white !important;
+    height: 35px;
+}
+.stylish-input-group .form-control{
+	border-right:0;
+	box-shadow:0 0 0;
+	border-color:#ccc;
+}
+.stylish-input-group button{
+    border:0;
+    background:transparent;
+}
+
+.stylish-input-group {
+  width: 180px;
+}
+
+.form-control {
+  height: 35px;
+}
 
  // h1, h2 {
  //   color: white;
@@ -31,7 +122,7 @@
  //   0 0 150px #ff00de;
  // }
 
- .navbar h2 {
+ .liveAndLearn {
    color: black;
  text-shadow: 0 0 10px #fff,
  0 0 20px #fff,
@@ -66,3 +157,31 @@
    margin-top: 5px;
    margin-bottom: -30px;
  }
+
+ @media screen and (max-width: 950px) {
+   .navbar .liveAndLearn {
+     display: none;
+   }
+ }
+ @media screen and (min-width: 950px) {
+   .smallLiveAndLearn {
+     display: none;
+   }
+ }
+ @media screen and (max-width: 950px) {
+   .smallLiveAndLearn {
+     margin-top: 100px;
+     margin-bottom: -100px;
+   }
+ }
+
+ @media screen and (max-width: 614px) {
+   .smallLiveAndLearn {
+     margin-top: 120px;
+     margin-bottom: -100px;
+   }
+ }
+
+.gridster a {
+  color:white;
+}

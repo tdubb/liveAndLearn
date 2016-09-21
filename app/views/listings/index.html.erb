@@ -1,0 +1,67 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-1 pull-right">
+    </div>
+    <div class="col-md-1 pull-right">
+        <%= link_to "New Listing", new_user_listing_path(current_user), :class => 'btn btn-large btn-primary' if current_user%>
+    </div>
+    <div class="col-lg-12 text-center">
+      <div class="gridster">
+        <div id="drop" class="panel panel-primary">
+         <div class= "panel-heading"> Drag Here to Remove </div>
+         <div class= "panel-body"> </div>
+        </div>
+        <ul>
+          <%- @listings.each_with_index do |listing, index| %>
+          <li class="panel panel-primary" data-row="<%=index < 2 ? 1 : 4%>" data-col="<%=index%2 == 0 ? 1 : 4%>" data-sizex="3" data-sizey="5">
+          <h2 class="panel-heading"><%= link_to listing.title, current_user ? user_listing_path(current_user, listing) : listing_path(listing)%></h2>
+          <h3 class="panel-body"><%= truncate(listing.description, length: 100) %></h3>
+          <h3 class="panel-body"><%= image_tag listing.photos.last.image_url(:thumb) if listing.photos.last %></h3>
+          <%= (button_to "delete", listing, :method => :delete, remote: true, :class => 'delete-listing') if params[:user_id] && listing.user_id == current_user.id%>
+          </li>
+          <% end -%>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script type='text/javascript'>
+
+  $(document).on('ajax:success', '.delete-listing', function(e, data, status, xhr) {
+      // .parent() is the div containing this "X" delete link
+      e.preventDefault();
+      $(this).hide();
+      e.preventDefault();
+      }
+  );
+  var gridster;
+
+  $(function(){
+
+  gridster = $(".gridster ul").gridster({
+    widget_base_dimensions: [100, 55],
+    widget_margins: [5, 5],
+    avoid_overlapped_widgets: true,
+    helper: 'clone',
+    max_cols: 2,
+    max_rows: 2,
+    resize: {
+      enabled: false,
+      }
+  }).data('gridster');
+
+
+  // set lis to Jquery draggable elements
+  $(".gridster li").draggable();
+
+    // set up drop space
+    $('#drop').droppable({
+        drop: function (e, ui) {
+            gridster.remove_widget(ui.helper.css('display', 'none'))
+        }
+    });
+
+  });
+</script>

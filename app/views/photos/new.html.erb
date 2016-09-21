@@ -1,0 +1,15 @@
+<div class="containter">
+  <div class="row">
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-4">
+      <%= bootstrap_form_for @photo do |f| %>
+        <%= f.hidden_field :listing_id, :value => @listing_id %>
+        <%= f.file_field :image %>
+        <%= f.submit %>
+      <% end %>
+    </div>
+    <div class="col-md-4">
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="containter outerContainer">
+  <div class="row">
+    <div class="col-sm-12 text-center">
+      <img src=<%=current_user.image%>>
+      <br>
+      <%= current_user.name %>
+      <br>
+      <%= current_user.email %>
+      <br>
+      <%= link_to "My Listings", user_listings_path(current_user) %>
+      <br>
+    </div>
+  </div>
+</div>

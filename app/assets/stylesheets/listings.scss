@@ -1,0 +1,24 @@
+// Place all the styles related to the Listing controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.inline {
+  display: inline-block;
+}
+.gridster ul {
+    list-style: none;
+}
+.gridster ul li {
+    background-color: red;
+}
+
+#drop {
+    border: solid 2px red;
+    height: 200px;
+    width: 1000px;
+}
+
+
+span {
+}
