@@ -16,4 +16,7 @@
 //= require jquery.gridster.js
 //= require bootstrap-sprockets
 //= require turbolinks
+//= require listings.js
+//= require photos.js
+//= require users.js
 //= require_tree .

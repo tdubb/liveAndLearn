@@ -56,7 +56,11 @@
       </div>
       <div class="col-sm-1">
       </div>
+      <div class="clearNavBar"></div>
       <h1 class="smallLiveAndLearn liveAndLearn text-center">Live and Learn</h1>
+      <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>" id="alert"><%= value %></div>
+      <% end %>
       <%= yield %>
     </div>
     <script type='text/javascript'>
@@ -234,7 +238,6 @@
       })(jQuery, window);
 
       $(".panel .panel-heading").each(function(index, value) {
-        console.log("here");
         $(value).quickfit({min: 2, max: 25, truncate: true, tolerance: 0.05, width: 300 });
       });
     </script>

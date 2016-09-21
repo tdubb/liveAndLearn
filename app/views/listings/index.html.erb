@@ -15,7 +15,8 @@
           <%- @listings.each_with_index do |listing, index| %>
           <li class="panel panel-primary" data-row="<%=index < 2 ? 1 : 4%>" data-col="<%=index%2 == 0 ? 1 : 4%>" data-sizex="3" data-sizey="5">
           <h2 class="panel-heading"><%= link_to listing.title, current_user ? user_listing_path(current_user, listing) : listing_path(listing)%></h2>
-          <h3 class="panel-body"><%= listing.body %></h3>
+          <h3 class="panel-body"><%= truncate(listing.description, length: 100) %></h3>
+          <h3 class="panel-body"><%= image_tag listing.photos.last.image_url(:thumb) if listing.photos.last %></h3>
           <%= (button_to "delete", listing, :method => :delete, remote: true, :class => 'delete-listing') if params[:user_id] && listing.user_id == current_user.id%>
           </li>
           <% end -%>

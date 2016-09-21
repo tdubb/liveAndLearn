@@ -1,5 +1,6 @@
 class ListingsController < ApplicationController
 
+
   def index
     if params[:user_id]
       @listings = User.find(params[:user_id]).listings
@@ -9,8 +10,8 @@ class ListingsController < ApplicationController
   end
 
   def show
-    # @listing = Listing.find(params[:id])
-    @listings = Listing.all
+    @listing = Listing.find(params[:id])
+    @photos = @listing.photos
   end
 
   def new
@@ -18,10 +19,11 @@ class ListingsController < ApplicationController
   end
 
   def create
-    @listing = Listing.new(params.require(:listing).permit(:title, :body, :email, :phone))
+    @listing = Listing.new(params.require(:listing).permit(:title, :body, :email, :phone, :description))
     @listing.user_id = current_user.id
     @listing.save
-    redirect_to user_listings_path(current_user)
+    create_photo
+    redirect_to user_listing_path(current_user, @listing)
   end
 
   def destroy
@@ -36,7 +38,18 @@ class ListingsController < ApplicationController
 
   private
 
-  def listings_params
-    params.permit(:title, :body, :email, :phone)
+  def create_photo
+    if params[:listing][:image]
+      @photo = Photo.new(image: params[:listing][:image])
+      @photo.listing_id = @listing.id
+      @photo.save
+    end
   end
+  # def listings_params
+  #   params.require(:listing).permit(:title, :body, :email, :phone, :description)
+  # end
+  #
+  # def photos_params
+  #   params.require(:listing).permit(:avatars)
+  # end
 end

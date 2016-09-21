@@ -21,12 +21,22 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
- html,body { height: 120%; margin: 0px; margin-top: -60px; padding: 0px; }
+ html,body { min-height: 120%; margin: 0px; margin-top: -60px; padding: 0px; background: rgba(0, 126, 167, 1);}
 
+
+ .clearNavBar {
+   margin-top: 60px;
+ }
+ .alert {
+   text-align: center;
+ }
  .outerContainer {
    margin-top: 80px;
    width: 80%;
    margin: auto;
+ }
+ .listingShow {
+   margin-left: -150px;
  }
 //
 .block a {

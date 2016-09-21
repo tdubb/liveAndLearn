@@ -1,0 +1,13 @@
+<div class="containter">
+  <div class="row">
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-4">
+      <% @photos.each do |photo| %>
+        <h3 class="panel-body inline"><%= image_tag photo.image_url(:thumb) if photo.image? %></h3>
+      <% end %>
+    </div>
+    <div class="col-md-4">
+    </div>
+  </div>
+</div>

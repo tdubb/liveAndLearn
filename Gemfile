@@ -29,6 +29,10 @@ gem 'bootstrap_form'
 gem 'figaro'
 gem 'pg_search'
 gem 'gridster-rails'
+gem 'carrierwave'
+gem 'fog', '~> 1.16'
+gem "rmagick"
+gem 'aws-sdk', '~> 2'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
