@@ -23,9 +23,9 @@ default: &default
 
 development:
   <<: *default
-  database: liveAndLearn
-  username: <%= ENV['LIVEANDLEARN_DATABASE_USERNAME'] %>
-  password: <%= ENV['LIVEANDLEARN_DATABASE_PASSWORD'] %>
+  database: liveAndLearn_development
+  username: tyler
+  password:
 
 
   # The specified database role being used to connect to postgres.
@@ -83,6 +83,8 @@ test:
 #
 production:
   <<: *default
-  database: liveAndLearn_dev
-  username: <%= ENV['LIVEANDLEARN_DATABASE_USERNAME'] %>
-  password: <%= ENV['LIVEANDLEARN_DATABASE_PASSWORD'] %>
+    database: <%= ENV['RDS_DB_NAME'] %>
+    username: <%= ENV['RDS_USERNAME'] %>
+    password: <%= ENV['RDS_PASSWORD'] %>
+    host: <%= ENV['RDS_HOSTNAME'] %>
+    port: <%= ENV['RDS_PORT'] %>
